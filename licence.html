@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Piblic - License Key</title>
+    <link rel="stylesheet" href="css/licence.css">
+</head>
+<body>
+    <div class="license-container">
+        <div class="background-gif">
+            <img src="images/bg.png" alt="Background">
+            <div class="license-form">
+                <h1 id="licenseTitle">Enter License Key</h1>
+                <form id="licenseForm" onsubmit="validateLicense(event)">
+                    <input type="text" id="licenseKey" required placeholder="Enter your license key">
+                    <button type="submit" id="submitBtn">Submit</button>
+                </form>
+                <div id="message" class="message"></div>
+                <div class="contact-info">
+                    <p id="noLicense"></p>
+                    <p id="contactUs"></p>
+                    <p id="phone"></p>
+                    <p id="email"></p>
+                    <p id="priceInfo"></p>
+                </div>
+            </div>
+        </div>
+        <!-- Add this popup dialog inside the license-container div -->
+        <div class="success-popup" id="successPopup">
+            <img src="images/thegifs.gif" alt="Success" class="success-gif">
+            <p>License Verified Successfully!</p>
+        </div>
+
+    </div>
+    <script src="js/licence.js"></script>
+</body>
+</html>

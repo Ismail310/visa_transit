@@ -1,0 +1,134 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.background-gif {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.background-gif img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    max-width: 215px;
+}
+
+.travel-btn {
+    width: 100%;
+    padding: 10px 10px;  /* Reduced padding here */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.travel-btn:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .travel-btn {
+        font-size: 14px;
+        padding: 8px ;  /* Reduced padding for mobile */
+        border-radius: 20px;
+    } 
+    .background-gif {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
+    .background-gif img {
+        width: 100%;
+        height: fit-content;
+    }
+    .button-container {
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: fit-content;
+        max-width: 215px;
+    }
+}
+
+/* Add these new styles to your existing CSS */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.travel-btn {
+    /* Add to existing .travel-btn styles */
+    position: relative;
+    overflow: hidden;
+}
+
+.travel-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.travel-btn:active::after {
+    width: 200px;
+    height: 200px;
+}
